@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+
+  /* sombra embaixo da navbar */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* Position para fugir do fluxo da tela, ficando emcima do showcase */
+  position: absolute;
+}
+
+.navbar-container > ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-container > ul > li {
+  text-transform: uppercase;
+  margin-right: 40px;
+  color: white;
+  letter-spacing: 0.1rem;
+  opacity: 50%;
+  transition: opacity 0.2s ease-in;
+}
+
+.navbar-container > ul > li:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+/* Showcase */
+.showcase-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  /* Utilizando imagem como Background */
+  background-image: url(./images/showcase.png);
+  background-size: cover;
+  background-position: center;
+
+  /* Overlay da background */
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: color;
+}
+
+.showcase-container > h1 {
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.showcase-container > p {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #eee;
+  letter-spacing: 0.15rem;
+
+  /* borda */
+  border-bottom: 1.5px solid #fff;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* About Me */
+.about-me-content {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.about-me-content img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+
+.about-me-content p {
+  color: #fff;
+  line-height: 2rem;
+}
+
+/* SKILLS */
+.skills-content {
+  margin-top: 108px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-item {
+  background-color: #202020;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-content .skill-item:nth-child(2) {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.skill-item span {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.skill-item p {
+  color: #fff;
+  opacity: 75%;
+}
+
+/* Utilities */
+.section-container {
+  width: 100%;
+  background-color: #111;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-content {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 3rem;
+  letter-spacing: 0.15rem;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid #fff;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
