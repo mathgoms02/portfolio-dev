@@ -206,6 +206,20 @@
   font-weight: 500;
 }
 
+/* Forms */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form .form-input {
+  margin-bottom: 20px;
+}
+
 /* Utilities */
 .section-container {
   width: 100%;
@@ -233,4 +247,35 @@
   text-align: center;
   width: fit-content;
   margin: auto;
+}
+
+.form-input {
+  border: none;
+  border-radius: 10px;
+  background-color: #202020;
+  padding: 20px;
+  resize: none; /* Bloqueando resize to textarea */
+  /* Não utilizar atributos como Margin em classes utilitárias (adicionei no .contact-form .form-input )*/
+
+  /* TODO: Alterar apenas a cor do placeholder */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-input:focus {
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.form-button {
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.form-button:hover {
+  cursor: pointer;
+  /* TODO: Adicionar para inverter as cores */
 }
