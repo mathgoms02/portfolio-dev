@@ -10,42 +10,48 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/0b0e03f698.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Portfólio</title>
   </head>
   <body>
     <nav class="navbar-container">
       <ul>
-        <li>Início</li>
-        <li>Sobre</li>
-        <li>Habilidades</li>
-        <li>Projetos</li>
-        <li>Contato</li>
+        <li><a href="#home-page">Início</a></li>
+        <li><a href="#about-page">Sobre</a></li>
+        <li><a href="#skills-page">Habilidades</a></li>
+        <li><a href="#projects-page">Projetos</a></li>
+        <li><a href="#contact-page">Contato</a></li>
       </ul>
     </nav>
 
-    <div class="showcase-container">
+    <div id="home-page" class="showcase-container">
       <h1>Hi, I´m Matheus Gomes!</h1>
       <p>A Professional Web Developer</p>
     </div>
 
     <!-- ABOUT ME -->
-    <div class="section-container">
+    <div id="about-page" class="section-container">
       <div class="section-content">
         <h2 class="section-title">Sobre Mim</h2>
         <div class="about-me-content">
           <img src="./images/avatar.png" alt="Matheus Gomes" />
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum
-            ipsa, quas nesciunt minima nisi odit explicabo veniam sapiente ipsam
-            cum doloremque aliquid dolores dicta laudantium veritatis
-            consequatur est consequuntur a perferendis.
+            Desenvolvedor em formação com experiência em Python, automação de
+            testes, Machine Learning e desenvolvimento de APIs. Atuei em
+            Pesquisa e Desenvolvimento (R&D), criando soluções para automação,
+            análise de dados, criação e manutenção de ferramentas internas e
+            integração de sistemas. Experiência com Linux, Android (ADB), CI/CD
+            e aplicação de IA para otimização de processos.
           </p>
         </div>
       </div>
     </div>
 
     <!-- SKILLS -->
-    <div class="section-container">
+    <div id="skills-page" class="section-container">
       <div class="section-content">
         <h2 class="section-title">Habilidades</h2>
         <div class="skills-content">
@@ -81,7 +87,7 @@
 
     <!-- PROJECTS -->
     <!-- LinkTree | Gestão de Treinos | BusSense | EmpregaAI -->
-    <div class="section-container">
+    <div id="projects-page" class="section-container">
       <div class="section-content">
         <h2 class="section-title">Projetos</h2>
         <div class="projects-content">
@@ -144,7 +150,9 @@
           </div>
         </div>
       </div>
-      <div class="section-container">
+
+      <!-- CONTACT -->
+      <div id="contact-page" class="section-container">
         <div class="section-content">
           <h2 class="section-title">Entre em Contato</h2>
 
@@ -177,6 +185,20 @@
           </form>
         </div>
       </div>
+    </div>
+    <div class="footer-container">
+      <div class="social-items">
+        <a href="mailto:math.gomsx3@gmail.com"
+          ><i class="fa-solid fa-envelope fa-xl"></i
+        ></a>
+        <a href="https://github.com/mathgoms02" target="_blank"
+          ><i class="fa-brands fa-github fa-xl"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/mathgomsit/" target="_blank"
+          ><i class="fa-brands fa-linkedin fa-xl"></i
+        ></a>
+      </div>
+      <p>Copyright 2026</p>
     </div>
   </body>
 </html>
