@@ -129,6 +129,10 @@ a {
   margin-right: 50px;
 }
 
+.skill-item > img:hover {
+  filter: contrast(200%);
+}
+
 .skill-item span {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -151,7 +155,7 @@ a {
   text-align: right;
 }
 
-.projects-content .project-item:nth-child(even) > .project-item-image {
+.projects-content .project-item:nth-child(even) > a {
   order: 2;
   margin-left: 50px;
 }
@@ -184,7 +188,7 @@ a {
 }
 
 .project-item-3 {
-  background-image: url(./images/projeto-3.jpg);
+  background-image: url(./images/projeto-3.png);
 }
 
 .project-item-4 {
@@ -237,6 +241,10 @@ a {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.footer-container .social-items a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* Utilities */
 .section-container {
   width: 100%;
@@ -274,8 +282,12 @@ a {
   resize: none; /* Bloqueando resize to textarea */
   /* Não utilizar atributos como Margin em classes utilitárias (adicionei no .contact-form .form-input )*/
 
-  /* TODO: Alterar apenas a cor do placeholder */
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.form-input::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 0.3;
 }
 
 .form-input:focus {
@@ -290,9 +302,15 @@ a {
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
+
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
 }
 
 .form-button:hover {
   cursor: pointer;
   /* TODO: Adicionar para inverter as cores */
+  background-color: rgba(255, 255, 255, 0.75);
+  color: #000;
 }

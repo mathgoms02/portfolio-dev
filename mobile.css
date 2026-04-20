@@ -79,7 +79,7 @@
     text-align: center;
   }
 
-  .projects-content .project-item:nth-child(even) > .project-item-image {
+  .projects-content .project-item:nth-child(even) > a {
     order: 1;
     margin-left: 0;
   }
