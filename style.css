@@ -1,0 +1,195 @@
+* {
+  font-family: "JetBrains Mono", monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #00f0ff;
+}
+
+/* Navbar */
+.navbar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  background-color: #0b0c10;
+  position: absolute;
+}
+
+.navbar-container ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.navbar-container ul li {
+  padding-right: 20px;
+  letter-spacing: 0.125rem;
+  font-weight: 700;
+  color: #00f0ff;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-container ul li:hover {
+  color: #ff007a;
+  cursor: pointer;
+}
+
+/* Showcase */
+.showcase-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 80px;
+
+  align-items: center;
+
+  background-color: #0b0c10;
+}
+
+.showcase-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: #00f0ff;
+  padding-right: 90px;
+}
+
+.showcase-content-left h1 {
+  font-size: 3rem;
+}
+
+.showcase-content-left p {
+  font-size: 1.125rem;
+}
+
+.showcase-content-left button {
+  width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 900;
+  letter-spacing: 0.075rem;
+  background-color: #ff007a;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.showcase-content-left button:hover {
+  background-color: #00f0ff;
+  color: #0b0c10;
+  cursor: pointer;
+}
+
+.showcase-content-right .image-molde {
+  position: relative;
+  display: inline-block;
+  padding: 40px;
+  background-color: #0b0c10;
+}
+
+.showcase-content-right .image-molde img {
+  display: block;
+  border-radius: 8px;
+  width: 450px;
+}
+
+.showcase-content-right .image-molde::before,
+.showcase-content-right .image-molde::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 10px solid #ff007a;
+}
+
+/* Cantoneira Superior Esquerda */
+.showcase-content-right .image-molde::before {
+  top: 0;
+  left: 0;
+  border-right: none; /* Removemos as bordas que não queremos */
+  border-bottom: none;
+}
+
+/* Cantoneira Inferior Direita */
+.showcase-content-right .image-molde::after {
+  bottom: 0;
+  right: 0;
+  border-left: none; /* Removemos as bordas que não queremos */
+  border-top: none;
+}
+
+/* Tecnical Skills */
+.skills-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.skills-content-right {
+  display: flex;
+  justify-content: center;
+}
+
+.skills {
+  flex: 0 0 70%;
+  max-width: 70%;
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: antiquewhite;
+}
+
+.skills .skill-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.skills .skill-item h5 {
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+  text-transform: capitalize;
+}
+
+.skills .skill-item .progress {
+  background-color: black;
+  height: 7px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.skills .skill-item {
+  margin-bottom: 25px;
+}
+
+.skills .skill-item .progress .progress-in {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background-color: red;
+}
+
+.skills .skill-item .skill-percent {
+  position: absolute;
+  right: 0;
+  color: black;
+  top: -40px;
+  font-weight: 400;
+  line-height: 40px;
+}
