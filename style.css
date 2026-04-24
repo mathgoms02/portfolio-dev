@@ -5,8 +5,21 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #00f0ff;
+}
+
+p {
+  font-size: 1.125rem;
   color: #00f0ff;
 }
 
@@ -40,7 +53,9 @@ a {
   padding-right: 80px;
 
   background-color: #0b0c10;
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
+  z-index: 999;
 }
 
 .navbar-container ul {
@@ -50,14 +65,17 @@ a {
 }
 
 .navbar-container ul li {
-  padding-right: 20px;
+  padding-right: 30px;
   letter-spacing: 0.125rem;
   font-weight: 700;
+}
+
+.navbar-container ul li a {
   color: #00f0ff;
   transition: color 0.2s ease-in-out;
 }
 
-.navbar-container ul li:hover {
+.navbar-container ul li a:hover {
   color: #ff007a;
   cursor: pointer;
 }
@@ -82,13 +100,13 @@ a {
   padding-right: 90px;
 }
 
-.showcase-content-left h1 {
+/* .showcase-content-left h1 {
   font-size: 3rem;
-}
+} */
 
-.showcase-content-left p {
+/* .showcase-content-left p {
   font-size: 1.125rem;
-}
+} */
 
 .showcase-content-left button {
   width: 150px;
@@ -119,6 +137,11 @@ a {
   display: block;
   border-radius: 8px;
   width: 450px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.showcase-content-right .image-molde img:hover {
+  transform: scale(1.05);
 }
 
 .showcase-content-right .image-molde::before,
@@ -161,13 +184,13 @@ a {
   color: #00f0ff;
 }
 
-.skills-content-left h1 {
+/* .skills-content-left h1 {
   font-size: 3rem;
-}
+} */
 
-.skills-content-left p {
+/* .skills-content-left p {
   font-size: 1.125rem;
-}
+} */
 
 .skills-content-right {
   display: flex;
@@ -234,4 +257,29 @@ a {
   top: -40px;
   font-weight: 400;
   line-height: 40px;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #0b0c10;
+  gap: 50px;
+}
+
+.slider-container {
+  width: 965px;
+  height: 520px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: scroll;
+}
+
+.slides img {
+  width: 965px;
+  height: 500px;
 }
