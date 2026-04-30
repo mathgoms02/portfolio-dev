@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
+
     <title>Portfólio</title>
   </head>
   <body>
@@ -27,8 +28,8 @@
     <div id="showcase" class="showcase-container">
       <div class="showcase-content-left">
         <h1>
-          Hello, my name is Matheus Gomes<br />I´m a
-          <span class="adj-box"></span>
+          Hello, my name is Matheus Gomes<br />I´m
+          <span class="adj-box"></span>|
         </h1>
 
         <p>
@@ -177,13 +178,22 @@
 
     <div id="project" class="projects-container">
       <h1>Projects</h1>
-      <p>TODO: Create a carrousel</p>
-      <div class="slider-container">
-        <a class="slides" href="#"><img src="./images/sample.jpg" alt="" /></a>
-        <a class="slides" href="#"><img src="./images/sample.jpg" alt="" /></a>
-        <a class="slides" href="#"><img src="./images/sample.jpg" alt="" /></a>
+      <div class="carousel-container">
+        <i id="prevBtn" class="fa-solid fa-chevron-left prevBtn"></i>
+        <div class="carousel-slide-container">
+          <div class="carousel-slide">
+            <a class="slide" href="#"><div>1</div></a>
+            <a class="slide" href="#"><div>2</div></a>
+            <a class="slide" href="#"><div>3</div></a>
+          </div>
+        </div>
+        <i id="nextBtn" class="fa-solid fa-chevron-right nextBtn"></i>
       </div>
     </div>
     <script src="./main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0b0e03f698.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
