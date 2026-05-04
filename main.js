@@ -26,10 +26,23 @@ let size = items[0].getBoundingClientRect().width;
 slide.style.transform = "translateX(0px)";
 slideTextBox[0].classList.add("fade-in");
 
-window.addEventListener("resize", () => {
-  size = items[0].getBoundingClientRect().width;
-  slide.style.transform = `translateX(${-size * counter}px)`;
-});
+function debounce(func, timeout = 300) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func(...args);
+    }, timeout);
+  };
+}
+
+window.addEventListener(
+  "resize",
+  debounce(() => {
+    size = items[0].getBoundingClientRect().width;
+    slide.style.transform = `translateX(${-size * counter}px)`;
+  }),
+);
 
 // Typewriter
 function typewriter() {
