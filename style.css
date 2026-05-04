@@ -184,14 +184,6 @@ p {
   color: #00f0ff;
 }
 
-/* .skills-content-left h1 {
-  font-size: 3rem;
-} */
-
-/* .skills-content-left p {
-  font-size: 1.125rem;
-} */
-
 .skills-content-right {
   display: flex;
   justify-content: end;
@@ -259,6 +251,7 @@ p {
   line-height: 40px;
 }
 
+/* PROJECTS */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -365,6 +358,81 @@ p {
 
 .prj4 {
   background-image: url(./images/project-4.png);
+}
+
+/* Contact */
+.contact-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 80px;
+  gap: 50px;
+
+  align-items: center;
+
+  background-color: #0b0c10;
+}
+
+.contact-container-left {
+  display: grid;
+  grid-gap: 50px;
+}
+
+.social-media {
+  font-size: 2rem;
+  color: #00f0ff;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-input {
+  border: none;
+  border-radius: 10px;
+  background-color: #1d202b;
+  padding: 20px;
+  resize: none; /* Bloqueando resize to textarea */
+
+  color: #00f0ff;
+}
+
+.form-input::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 0.3;
+}
+
+.form-input:focus {
+  outline: 1px solid #ffa2cf;
+}
+
+.contact-form .form-input {
+  margin-bottom: 20px;
+}
+
+.form-button {
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #00f0ff;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+.form-button:hover {
+  cursor: pointer;
+  background-color: #ff007a;
+  color: #000;
 }
 
 /* Utilities */
