@@ -282,6 +282,7 @@ p {
 
 .carousel-slide-container {
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .carousel-slide {
@@ -291,7 +292,8 @@ p {
 
 .prevBtn,
 .nextBtn {
-  border-radius: 2px;
+  font-size: 1.5rem;
+  border-radius: 5px;
   padding-bottom: 15px;
   padding-top: 15px;
   align-self: center;
@@ -336,6 +338,10 @@ p {
   text-decoration: underline;
 }
 
+.slide-text h2 > a:hover {
+  color: #ffa2cf;
+}
+
 .slide-text p {
   color: #fff;
 }
@@ -346,19 +352,19 @@ p {
 }
 
 .prj1 {
-  background-image: url(./images/sample.jpg);
+  background-image: url(./images/project-1.png);
 }
 
 .prj2 {
-  background-image: url(./images/sample.jpg);
+  background-image: url(./images/project-2.png);
 }
 
 .prj3 {
-  background-image: url(./images/sample.jpg);
+  background-image: url(./images/project-3.png);
 }
 
 .prj4 {
-  background-image: url(./images/sample.jpg);
+  background-image: url(./images/project-4.png);
 }
 
 /* Utilities */

@@ -20,11 +20,16 @@ const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 
 let counter = 0;
-const size = items[0].getBoundingClientRect().width;
+let size = items[0].getBoundingClientRect().width;
 
 // Initial Position
 slide.style.transform = "translateX(0px)";
 slideTextBox[0].classList.add("fade-in");
+
+window.addEventListener("resize", () => {
+  size = items[0].getBoundingClientRect().width;
+  slide.style.transform = `translateX(${-size * counter}px)`;
+});
 
 // Typewriter
 function typewriter() {
