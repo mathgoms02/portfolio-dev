@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Fundo com a cor principal do portfólio -->
+  <rect width="512" height="512" rx="90" fill="#0b0c10" />
+
+  <!-- Cantoneira Superior Esquerda (Rosa) inspirada no seu CSS .image-molde -->
+  <polyline 
+    points="60,180 60,60 180,60" 
+    fill="none" 
+    stroke="#ff007a" 
+    stroke-width="50" 
+    stroke-linecap="square" 
+    stroke-linejoin="miter" 
+  />
+
+  <!-- Cantoneira Inferior Direita (Rosa) inspirada no seu CSS .image-molde -->
+  <polyline 
+    points="452,332 452,452 332,452" 
+    fill="none" 
+    stroke="#ff007a" 
+    stroke-width="50" 
+    stroke-linecap="square" 
+    stroke-linejoin="miter" 
+  />
+
+  <!-- Letra 'M' estilizada (Ciano) centralizada -->
+  <path 
+    d="M 160 360 L 160 180 L 256 270 L 352 180 L 352 360" 
+    fill="none" 
+    stroke="#00f0ff" 
+    stroke-width="50" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+  />
+</svg>
