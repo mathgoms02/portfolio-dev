@@ -363,6 +363,16 @@ p {
   background-image: url(./assets/images/project-4.png);
 }
 
+.carousel-guide-dot {
+  display: flex;
+  color: #00f0ff;
+}
+
+.carousel-guide-dot > .dot {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 /* Contact */
 .contact-container {
   height: 100vh;
@@ -481,4 +491,8 @@ p {
 
 .fade-out {
   animation: fade-out 0.5s ease-in forwards;
+}
+
+.dot-active {
+  color: #ff007a;
 }

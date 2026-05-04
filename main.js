@@ -18,6 +18,7 @@ const items = document.querySelectorAll(".slide");
 const slideTextBox = document.querySelectorAll(".slide-text");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
+const carouselGuideDotContainer = document.querySelector(".carousel-guide-dot");
 
 let counter = 0;
 let size = items[0].getBoundingClientRect().width;
@@ -63,7 +64,7 @@ function typewriter() {
     typeSpeed = 2000;
     isDeleting = true;
   } else if (isDeleting && charIndex === 0) {
-    // Next workd
+    // Next word
     isDeleting = false;
     wordIndex = (wordIndex + 1) % words.length; // Volta para o inicio da lista
     typeSpeed = 500;
@@ -75,6 +76,19 @@ function typewriter() {
 document.addEventListener("DOMContentLoaded", typewriter);
 
 // Carrousel
+items.forEach(() => {
+  const newDot = document.createElement("i");
+  newDot.classList.add("fa-solid", "fa-circle", "dot");
+  carouselGuideDotContainer.appendChild(newDot);
+});
+
+const carouselGuideDot = document.querySelectorAll(".dot");
+
+function dotColor() {
+  carouselGuideDot.forEach((item) => item.classList.remove("dot-active"));
+  carouselGuideDot[counter].classList.add("dot-active");
+}
+
 nextBtn.addEventListener("click", () => {
   if (counter >= items.length - 1) return;
   counter++;
@@ -91,6 +105,7 @@ nextBtn.addEventListener("click", () => {
     lastText.classList.remove("fade-in");
     lastText.classList.remove("fade-out");
   }, 500);
+  dotColor(counter);
 });
 
 prevBtn.addEventListener("click", () => {
@@ -109,4 +124,7 @@ prevBtn.addEventListener("click", () => {
     lastText.classList.remove("fade-in");
     lastText.classList.remove("fade-out");
   }, 500);
+  dotColor(counter);
 });
+
+dotColor(counter);
