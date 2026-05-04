@@ -181,6 +181,9 @@ p {
 }
 
 .skills-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   color: #00f0ff;
 }
 
@@ -345,19 +348,19 @@ p {
 }
 
 .prj1 {
-  background-image: url(./images/project-1.png);
+  background-image: url(./assets/images/project-1.png);
 }
 
 .prj2 {
-  background-image: url(./images/project-2.png);
+  background-image: url(./assets/images/project-2.png);
 }
 
 .prj3 {
-  background-image: url(./images/project-3.png);
+  background-image: url(./assets/images/project-3.png);
 }
 
 .prj4 {
-  background-image: url(./images/project-4.png);
+  background-image: url(./assets/images/project-4.png);
 }
 
 /* Contact */
@@ -381,6 +384,16 @@ p {
 .social-media {
   font-size: 2rem;
   color: #00f0ff;
+}
+
+.social-media > a {
+  color: #00f0ff;
+  transition: color 0.2s ease-in-out;
+}
+
+.social-media > a:hover {
+  color: #ff007a;
+  cursor: pointer;
 }
 
 .contact-form {
