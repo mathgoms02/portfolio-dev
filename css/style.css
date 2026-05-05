@@ -91,6 +91,10 @@ p {
   cursor: pointer;
 }
 
+.adj-box::after {
+  content: "|";
+}
+
 .showcase-content-right .image-molde {
   position: relative;
   display: inline-block;

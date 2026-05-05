@@ -13,7 +13,7 @@
   }
 
   .navbar-container ul {
-    display: none; /* futuramente menu hambúrguer */
+    display: none; /* TODO: menu hambúrguer */
   }
 
   .showcase-container {
@@ -28,6 +28,10 @@
     padding-right: 0;
     margin-top: 100px;
     align-items: center;
+  }
+
+  .showcase-content-left > h1 {
+    height: 8rem;
   }
 
   .showcase-content-right .image-molde {
@@ -77,25 +81,67 @@
   }
 
   .carousel-container {
-    grid-template-columns: 0.1fr 1fr 0.1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+
+  .carousel-slide-container {
     width: 100%;
   }
 
   .prevBtn,
   .nextBtn {
-    display: none; /* simplifica UX no mobile */
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+
+  .prevBtn {
+    left: 10px;
+  }
+
+  .nextBtn {
+    right: 10px;
+  }
+
+  .prevBtn:hover,
+  .nextBtn:hover {
+    background-color: var(--color-primary);
+  }
+
+  .prevBtn:active,
+  .nextBtn:active {
+    background-color: var(--color-secondary);
+    opacity: 1;
   }
 
   .slide {
-    height: 400px;
+    height: 200px;
+  }
+
+  .slide-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    height: 100%;
   }
 
   .slide-text h2 > a {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .slide-text p {
-    font-size: 0.9rem;
+    font-size: 0.725rem;
+    text-align: center;
   }
 
   /* ===== DOTS ===== */
