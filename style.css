@@ -15,52 +15,32 @@ a {
 
 h1 {
   font-size: 3rem;
-  color: #00f0ff;
+  color: var(--text-main);
 }
 
 p {
   font-size: 1.125rem;
-  color: #00f0ff;
-}
-
-/* BARRA DE ROLAGEM */
-/* Largura da barra */
-::-webkit-scrollbar {
-  width: 6px;
-}
-/* Fundo da barra (trilho) */
-::-webkit-scrollbar-track {
-  background: #0b0c10;
-}
-/* Parte que desliza (thumb) */
-::-webkit-scrollbar-thumb {
-  background: #00f0ff;
-  border-radius: 6px;
-}
-/* Parte que desliza ao passar o mouse */
-::-webkit-scrollbar-thumb:hover {
-  background: #ff007a;
+  color: var(--text-main);
 }
 
 /* Navbar */
 .navbar-container {
+  position: fixed;
   width: 100%;
+  z-index: 999;
+
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
   padding-left: 80px;
   padding-right: 80px;
 
-  background-color: #0b0c10;
-  /* position: absolute; */
-  position: fixed;
-  z-index: 999;
+  background-color: var(--color-bg);
 }
 
 .navbar-container ul {
   display: flex;
-  flex-direction: row;
   list-style: none;
 }
 
@@ -71,58 +51,43 @@ p {
 }
 
 .navbar-container ul li a {
-  color: #00f0ff;
-  transition: color 0.2s ease-in-out;
+  color: var(--text-main);
+  transition: color var(--transition-fast);
 }
 
 .navbar-container ul li a:hover {
-  color: #ff007a;
-  cursor: pointer;
+  color: var(--color-secondary);
 }
 
 /* Showcase */
 .showcase-container {
   height: 100vh;
   display: flex;
-  flex-direction: row;
-  padding: 80px;
-
   align-items: center;
-
-  background-color: #0b0c10;
+  padding: 80px;
+  background-color: var(--color-bg);
 }
 
 .showcase-content-left {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  color: #00f0ff;
   padding-right: 90px;
 }
-
-/* .showcase-content-left h1 {
-  font-size: 3rem;
-} */
-
-/* .showcase-content-left p {
-  font-size: 1.125rem;
-} */
 
 .showcase-content-left button {
   width: 150px;
   padding: 10px;
-  border-radius: 10px;
-  color: #000;
+  border-radius: var(--border-radius);
+  color: var(--color-black);
   font-weight: 900;
-  letter-spacing: 0.075rem;
-  background-color: #ff007a;
+  background-color: var(--color-secondary);
 
-  transition: all 0.2s ease-in-out;
+  transition: var(--transition-fast);
 }
 
 .showcase-content-left button:hover {
-  background-color: #00f0ff;
-  color: #0b0c10;
+  background-color: var(--color-primary);
   cursor: pointer;
 }
 
@@ -130,14 +95,14 @@ p {
   position: relative;
   display: inline-block;
   padding: 40px;
-  background-color: #0b0c10;
+  background-color: var(--color-bg);
 }
 
 .showcase-content-right .image-molde img {
   display: block;
   border-radius: 8px;
   width: 450px;
-  transition: transform 0.5s ease-in-out;
+  transition: transform var(--transition-medium);
 }
 
 .showcase-content-right .image-molde img:hover {
@@ -150,22 +115,20 @@ p {
   position: absolute;
   width: 50px;
   height: 50px;
-  border: 10px solid #ff007a;
+  border: 10px solid var(--color-secondary);
 }
 
-/* Cantoneira Superior Esquerda */
 .showcase-content-right .image-molde::before {
   top: 0;
   left: 0;
-  border-right: none; /* Removemos as bordas que não queremos */
+  border-right: none;
   border-bottom: none;
 }
 
-/* Cantoneira Inferior Direita */
 .showcase-content-right .image-molde::after {
   bottom: 0;
   right: 0;
-  border-left: none; /* Removemos as bordas que não queremos */
+  border-left: none;
   border-top: none;
 }
 
@@ -177,14 +140,14 @@ p {
   align-items: center;
   padding-left: 80px;
   padding-right: 80px;
-  background-color: #0b0c10;
+  background-color: var(--color-bg);
 }
 
 .skills-content-left {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  color: #00f0ff;
+  color: var(--color-primary);
 }
 
 .skills-content-right {
@@ -200,7 +163,7 @@ p {
   padding: 30px;
   border-radius: 10px;
   overflow-y: scroll;
-  background-color: #1d202b;
+  background-color: var(--color-bg-secondary);
 }
 
 .skills .skill-item {
@@ -212,7 +175,7 @@ p {
   line-height: 40px;
   font-weight: 600;
   font-size: 16px;
-  color: #00f0ff;
+  color: var(--color-primary);
   text-transform: capitalize;
 }
 
@@ -220,12 +183,12 @@ p {
   line-height: 40px;
   font-weight: 600;
   font-size: 16px;
-  color: #00f0ff;
+  color: var(--color-primary);
   text-transform: capitalize;
 }
 
 .skills .skill-item .progress {
-  background-color: black;
+  background-color: var(--color-black);
   height: 7px;
   border-radius: 4px;
   width: 100%;
@@ -242,13 +205,13 @@ p {
   top: 0;
   height: 100%;
   border-radius: 4px;
-  background-color: #ff007a;
+  background-color: var(--color-secondary);
 }
 
 .skills .skill-item .skill-percent {
   position: absolute;
   right: 0;
-  color: #00f0ff;
+  color: var(--color-primary);
   top: -40px;
   font-weight: 400;
   line-height: 40px;
@@ -261,7 +224,7 @@ p {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #0b0c10;
+  background-color: var(--color-bg);
   gap: 50px;
 }
 
@@ -272,7 +235,7 @@ p {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden; /* Esconde itens fora da tela */
+  overflow: hidden; /* Hide other images */
   position: relative;
 }
 
@@ -283,7 +246,7 @@ p {
 
 .carousel-slide {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform var(--transition-medium);
 }
 
 .prevBtn,
@@ -294,13 +257,13 @@ p {
   padding-top: 15px;
   align-self: center;
   justify-self: center;
-  background-color: #00f0ff;
-  color: #000;
+  background-color: var(--color-primary);
+  color: var(--color-black);
 }
 
 .prevBtn:hover,
 .nextBtn:hover {
-  background-color: #ff007a;
+  background-color: var(--color-secondary);
   cursor: pointer;
 }
 
@@ -330,7 +293,7 @@ p {
 .slide-text h2 > a {
   font-size: 2rem;
   font-weight: 900;
-  color: #fff;
+  color: var(--color-white);
   text-decoration: underline;
 }
 
@@ -339,7 +302,7 @@ p {
 }
 
 .slide-text p {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .project-item-image {
@@ -365,12 +328,25 @@ p {
 
 .carousel-guide-dot {
   display: flex;
-  color: #00f0ff;
+  color: var(--color-primary);
 }
 
 .carousel-guide-dot > .dot {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+.dot-active {
+  color: var(--color-secondary);
 }
 
 /* Contact */
@@ -383,7 +359,7 @@ p {
 
   align-items: center;
 
-  background-color: #0b0c10;
+  background-color: var(--color-bg);
 }
 
 .contact-container-left {
@@ -393,16 +369,16 @@ p {
 
 .social-media {
   font-size: 2rem;
-  color: #00f0ff;
+  color: var(--color-primary);
 }
 
 .social-media > a {
-  color: #00f0ff;
+  color: var(--color-primary);
   transition: color 0.2s ease-in-out;
 }
 
 .social-media > a:hover {
-  color: #ff007a;
+  color: var(--color-secondary);
   cursor: pointer;
 }
 
@@ -418,15 +394,15 @@ p {
 .form-input {
   border: none;
   border-radius: 10px;
-  background-color: #1d202b;
+  background-color: var(--color-bg-secondary);
   padding: 20px;
   resize: none; /* Bloqueando resize to textarea */
 
-  color: #00f0ff;
+  color: var(--color-primary);
 }
 
 .form-input::placeholder {
-  color: rgb(255, 255, 255);
+  color: var(--color-white);
   opacity: 0.3;
 }
 
@@ -442,26 +418,26 @@ p {
   border: none;
   padding: 20px;
   border-radius: 10px;
-  background-color: #00f0ff;
-  color: #000;
+  background-color: var(--color-primary);
+  color: var(--color-black);
   text-transform: uppercase;
   font-weight: 600;
 
   transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
+    background-color var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .form-button:hover {
   cursor: pointer;
-  background-color: #ff007a;
-  color: #000;
+  background-color: var(--color-secondary);
+  color: var(--color-black);
 }
 
 /* Footer */
 .footer-container {
   width: 100%;
-  background-color: #000;
+  background-color: var(--color-black);
   color: rgba(255, 255, 255, 0.75);
   display: flex;
   justify-content: space-between;
@@ -486,22 +462,27 @@ p {
 }
 
 .fade-in {
-  animation: fade-in 0.5s ease-in forwards;
+  animation: fade-in var(--transition-medium);
 }
 
 .fade-out {
-  animation: fade-out 0.5s ease-in forwards;
+  animation: fade-out var(--transition-medium);
 }
 
-.dot {
-  cursor: pointer;
-  transition: transform 0.2s ease;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.dot:hover {
-  transform: scale(1.2);
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
 }
 
-.dot-active {
-  color: #ff007a;
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
 }
