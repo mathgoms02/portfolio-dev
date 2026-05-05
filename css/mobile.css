@@ -25,7 +25,7 @@
     background-color: #1d202bf3;
     align-items: flex-end;
     width: 50%;
-    height: 92vh;
+    height: 100vh;
     padding: 10px;
     transform: translateX(100%);
     transition: transform 0.4s ease-in-out;
@@ -55,7 +55,7 @@
 
   .menu-mobile-footer {
     margin-top: auto;
-    margin-bottom: 20px;
+    margin-bottom: 150px;
 
     padding-bottom: 40px;
     display: flex;
