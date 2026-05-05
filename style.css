@@ -493,6 +493,11 @@ p {
   animation: fade-out 0.5s ease-in forwards;
 }
 
+.dot:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .dot-active {
   color: #ff007a;
 }

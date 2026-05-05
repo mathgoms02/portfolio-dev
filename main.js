@@ -86,10 +86,19 @@ function initCarousel() {
 let dots = [];
 
 function createDots() {
-  slides.forEach(() => {
-    const newDot = document.createElement("i");
-    newDot.classList.add("fa-solid", "fa-circle", "dot");
-    dotsContainer.appendChild(newDot);
+  slides.forEach((_, index) => {
+    const dot = document.createElement("i");
+    dot.classList.add("fa-solid", "fa-circle", "dot");
+    dotsContainer.appendChild(dot);
+    dot.dataset.index = index;
+
+    dot.addEventListener("click", (e) => {
+      const index = Number(e.target.dataset.index);
+
+      if (index === currentIndex) return;
+
+      updateCarousel(index);
+    });
   });
   dots = document.querySelectorAll(".dot");
 }
