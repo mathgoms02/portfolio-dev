@@ -311,19 +311,19 @@ p {
 }
 
 .prj1 {
-  background-image: url(./assets/images/project-1.png);
+  background-image: url(../assets/images/project-1.png);
 }
 
 .prj2 {
-  background-image: url(./assets/images/project-2.png);
+  background-image: url(../assets/images/project-2.png);
 }
 
 .prj3 {
-  background-image: url(./assets/images/project-3.png);
+  background-image: url(../assets/images/project-3.png);
 }
 
 .prj4 {
-  background-image: url(./assets/images/project-4.png);
+  background-image: url(../assets/images/project-4.png);
 }
 
 .carousel-guide-dot {

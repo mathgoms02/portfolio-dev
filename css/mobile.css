@@ -1,0 +1,135 @@
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .navbar-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .navbar-container ul {
+    display: none; /* futuramente menu hambúrguer */
+  }
+
+  .showcase-container {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+    height: auto;
+    gap: 40px;
+  }
+
+  .showcase-content-left {
+    padding-right: 0;
+    margin-top: 100px;
+    align-items: center;
+  }
+
+  .showcase-content-right .image-molde {
+    padding: 20px;
+  }
+
+  .showcase-content-right .image-molde img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* ===== SKILLS ===== */
+  .skills-container {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: auto;
+    gap: 40px;
+  }
+
+  .skills-content-right {
+    justify-content: center;
+    display: block;
+  }
+
+  .skills {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+  }
+
+  .skill-item {
+    padding-bottom: 10px;
+  }
+
+  .skills > .skill-item p {
+    padding-top: 10px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  /* ===== PROJECTS / CAROUSEL ===== */
+  .projects-container {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .carousel-container {
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    width: 100%;
+  }
+
+  .prevBtn,
+  .nextBtn {
+    display: none; /* simplifica UX no mobile */
+  }
+
+  .slide {
+    height: 400px;
+  }
+
+  .slide-text h2 > a {
+    font-size: 1.2rem;
+  }
+
+  .slide-text p {
+    font-size: 0.9rem;
+  }
+
+  /* ===== DOTS ===== */
+  .carousel-guide-dot {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .carousel-guide-dot > .dot {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-container {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .contact-container-left {
+    text-align: center;
+  }
+
+  .social-media {
+    text-align: center;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+}
