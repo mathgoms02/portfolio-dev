@@ -43,7 +43,7 @@
     max-width: 300px;
   }
 
-  /* ===== SKILLS ===== */
+  /* Skills */
   .skills-container {
     grid-template-columns: 1fr;
     padding-top: 20px;
@@ -74,7 +74,7 @@
     line-height: 1rem;
   }
 
-  /* ===== PROJECTS / CAROUSEL ===== */
+  /* Projects */
   .projects-container {
     height: auto;
     padding: 40px 20px;
@@ -144,10 +144,10 @@
     text-align: center;
   }
 
-  /* ===== DOTS ===== */
   .carousel-guide-dot {
     justify-content: center;
     margin-top: 20px;
+    margin-right: 10px;
   }
 
   .carousel-guide-dot > .dot {
@@ -155,7 +155,7 @@
     padding-right: 10px;
   }
 
-  /* ===== CONTACT ===== */
+  /* Contacts */
   .contact-container {
     grid-template-columns: 1fr;
     padding: 40px 20px;
@@ -170,7 +170,7 @@
     text-align: center;
   }
 
-  /* ===== FOOTER ===== */
+  /* Footer */
   .footer-container {
     flex-direction: column;
     gap: 20px;
