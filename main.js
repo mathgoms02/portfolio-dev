@@ -1,3 +1,36 @@
+// Navbar
+const navBarLinks = document.querySelector("#navbar-links");
+const navbar = document.querySelector(".navbar-container");
+
+function openHambMenu() {
+  navBarLinks.classList.toggle("active");
+}
+
+navBarLinks.addEventListener("click", (e) => {
+  const isMobile = window.innerWidth <= 768;
+
+  if (e.target.tagName === "A") {
+    e.preventDefault();
+
+    const targetId = e.target.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      const navbarHeight = navbar.offsetHeight;
+      const coord =
+        targetSection.getBoundingClientRect().top +
+        window.scrollY -
+        navbarHeight;
+      window.scrollTo({
+        top: isMobile ? coord : coord + 50,
+        behavior: "smooth",
+      });
+
+      navBarLinks.classList.remove("active");
+    }
+  }
+});
+
 // TypeWrites Variables
 const textElement = document.querySelector(".adj-box");
 const words = [

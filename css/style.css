@@ -59,6 +59,10 @@ p {
   color: var(--color-secondary);
 }
 
+.hamb-menu {
+  display: none;
+}
+
 /* Showcase */
 .showcase-container {
   height: 100vh;
