@@ -337,6 +337,10 @@ p {
   background-image: url(../assets/images/project-4.png);
 }
 
+.prj5 {
+  background-image: url(../assets/images/project-5.png);
+}
+
 .carousel-guide-dot {
   display: flex;
   color: var(--color-primary);
