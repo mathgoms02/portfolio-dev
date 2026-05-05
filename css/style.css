@@ -93,6 +93,13 @@ p {
 
 .adj-box::after {
   content: "|";
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .showcase-content-right .image-molde {

@@ -1,12 +1,12 @@
 // TypeWrites Variables
 const textElement = document.querySelector(".adj-box");
 const words = [
-  // "a Fullstack Developer",
-  // "an Automation Engineer",
-  // "a Data Engineer",
+  "a Fullstack Developer",
+  "an Automation Engineer",
+  "a Data Engineer",
   "a Machine Learning Engineer",
-  // "an AI Developer",
-  // "a Software Engineer",
+  "an AI Developer",
+  "a Software Engineer",
 ];
 let wordIndex = 0;
 let charIndex = 0;
