@@ -241,7 +241,7 @@ p {
 
 .carousel-slide-container {
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 .carousel-slide {
@@ -396,7 +396,7 @@ p {
   border-radius: 10px;
   background-color: var(--color-bg-secondary);
   padding: 20px;
-  resize: none; /* Bloqueando resize to textarea */
+  resize: none;
 
   color: var(--color-primary);
 }
@@ -462,11 +462,11 @@ p {
 }
 
 .fade-in {
-  animation: fade-in var(--transition-medium);
+  animation: fade-in 0.5s ease-in forwards;
 }
 
 .fade-out {
-  animation: fade-out var(--transition-medium);
+  animation: fade-out 0.5s ease-in forwards;
 }
 
 /* Scrollbar */
