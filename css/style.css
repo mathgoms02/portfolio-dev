@@ -63,6 +63,10 @@ p {
   display: none;
 }
 
+.menu-mobile-footer {
+  display: none;
+}
+
 /* Showcase */
 .showcase-container {
   height: 100vh;
@@ -347,12 +351,8 @@ p {
 
 .carousel-guide-dot {
   display: flex;
+  gap: 20px;
   color: var(--color-primary);
-}
-
-.carousel-guide-dot > .dot {
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .dot {

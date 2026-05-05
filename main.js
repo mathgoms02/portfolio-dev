@@ -1,9 +1,11 @@
 // Navbar
 const navBarLinks = document.querySelector("#navbar-links");
 const navbar = document.querySelector(".navbar-container");
+const hambMenu = document.querySelector(".hamb-menu i");
 
 function openHambMenu() {
   navBarLinks.classList.toggle("active");
+  hambMenu.classList.toggle("rotate");
 }
 
 navBarLinks.addEventListener("click", (e) => {
