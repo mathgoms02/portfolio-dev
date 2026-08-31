@@ -1,0 +1,139 @@
+@import './tokens.css';
+
+/* ---------------------------------------------------------------- reset */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;           /* Lenis owns scrolling */
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video, canvas { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; background: none; border: none; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+:where(h1, h2, h3, h4, h5, h6) { font-weight: inherit; font-size: inherit; }
+
+::selection { background: var(--amber); color: #0a0a0a; }
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* --------------------------------------------------------- scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-sunk); }
+::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border: 3px solid var(--bg-sunk);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--amber-deep); }
+
+/* --------------------------------------------------- shared utilities */
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+
+/* the page shell: fixed index rail + flowing content */
+.shell {
+  padding-left: var(--rail);
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* 12-column editorial grid */
+.grid12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+@media (max-width: 860px) {
+  .grid12 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+.rule { border: 0; border-top: 1px solid var(--rule); }
+
+/* screen-reader only */
+.sr {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+.skip {
+  position: fixed; top: 0; left: 0; z-index: 200;
+  transform: translateY(-120%);
+  background: var(--amber); color: #0a0a0a;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono); font-size: var(--step--1);
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+  transition: transform var(--dur-2) var(--ease-out);
+}
+.skip:focus { transform: translateY(0); }
+
+/* hide the native cursor only where our custom one is active */
+body[data-cursor='on'],
+body[data-cursor='on'] * { cursor: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* the command palette can force the same state regardless of the OS setting */
+[data-reduce-motion='true'] *,
+[data-reduce-motion='true'] *::before,
+[data-reduce-motion='true'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* …and switch it back off for someone who asked for animations explicitly */
+@media (prefers-reduced-motion: reduce) {
+  [data-reduce-motion='false'] *,
+  [data-reduce-motion='false'] *::before,
+  [data-reduce-motion='false'] *::after {
+    animation-duration: revert-layer;
+    animation-iteration-count: revert-layer;
+    transition-duration: revert-layer;
+  }
+}

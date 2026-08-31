@@ -1,0 +1,48 @@
+.ascii {
+  --mx: 50%;
+  --my: 50%;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+.ascii[data-painted] { opacity: 1; }
+
+.ink,
+.hot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- the entrance: characters dissolve upward, uncovering the photograph --- */
+.ink {
+  opacity: 1;
+  transition: opacity 900ms var(--ease-out) 120ms;
+}
+.ascii[data-resolved] .ink { opacity: 0; }
+
+/* --- the spotlight: a pointer-tracked disc of amber characters --- */
+.hot {
+  opacity: 0;
+  --spot: radial-gradient(
+    circle 7rem at var(--mx) var(--my),
+    #000 0%,
+    rgba(0, 0, 0, 0.5) 46%,
+    transparent 72%
+  );
+  -webkit-mask-image: var(--spot);
+  mask-image: var(--spot);
+  transition: opacity 320ms var(--ease-out);
+}
+
+/* only once the portrait has settled, and only under a real pointer */
+.ascii[data-resolved][data-hover] .hot { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ink { transition: none; }
+  .hot { display: none; }
+}

@@ -1,0 +1,197 @@
+.panel {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid var(--rule);
+  background: var(--bg-raise);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  transition: color var(--dur-1);
+}
+.source:hover { color: var(--amber); }
+.sourceHandle { color: var(--ink-3); }
+
+.dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ink-faint); }
+.dot[data-live] { background: var(--signal); }
+
+/* ------------------------------------------------------------------ total */
+.total { display: grid; gap: 0.25rem; }
+
+.totalValue {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 2rem + 5vw, 5.5rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.totalLabel {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+}
+
+/* --------------------------------------------------------------- calendar */
+.calendarWrap { display: grid; gap: 0.45rem; overflow-x: auto; padding-bottom: 0.25rem; }
+
+.months,
+.calendar { min-width: 25rem; }
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--ink-4);
+  letter-spacing: 0.06em;
+}
+.months span { grid-row: 1; white-space: nowrap; }
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.week { display: grid; grid-template-rows: repeat(7, 1fr); gap: 2px; }
+
+.day {
+  aspect-ratio: 1;
+  background: var(--bg-raise-2);
+  border: 1px solid color-mix(in oklab, var(--ink) 4%, transparent);
+}
+
+/* the grid pops in cell by cell, but only once it is actually on screen;
+   without the flag every cell stays plainly visible */
+.calendarWrap[data-anim] .day { animation: pop 340ms var(--ease-snap) backwards; }
+
+@keyframes pop {
+  from { transform: scale(0.35); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendarWrap[data-anim] .day { animation: none; }
+}
+
+.day[data-level='0'] { background: color-mix(in oklab, var(--ink) 5%, transparent); }
+.day[data-level='1'] { background: color-mix(in oklab, var(--amber) 22%, transparent); }
+.day[data-level='2'] { background: color-mix(in oklab, var(--amber) 45%, transparent); }
+.day[data-level='3'] { background: color-mix(in oklab, var(--amber) 72%, transparent); }
+.day[data-level='4'] { background: var(--amber); }
+
+.day[data-static='true'] {
+  width: 10px;
+  aspect-ratio: 1;
+  animation: none !important;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  justify-content: flex-end;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+.legend > span:first-child { margin-right: 0.25rem; }
+.legend > span:last-child { margin-left: 0.25rem; }
+
+/* ---------------------------------------------------------------- figures */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+.figures dt {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  line-height: 1.3;
+}
+.figures dd {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--step-3);
+  line-height: 1;
+  color: var(--ink);
+  margin-top: 0.3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* -------------------------------------------------------------- languages */
+.langs { display: grid; gap: 0.85rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+
+.langTitle {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+.bar {
+  display: flex;
+  height: 0.5rem;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--ink) 5%, transparent);
+}
+.barSeg { transition: width 900ms var(--ease-out); }
+
+.langList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.08em;
+  color: var(--ink-2);
+}
+.langList li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.swatch { width: 8px; height: 8px; border-radius: 2px; }
+.pct { color: var(--ink-4); }
+
+.note {
+  font-size: var(--step--2);
+  color: var(--ink-4);
+  line-height: 1.5;
+  max-width: 60ch;
+}

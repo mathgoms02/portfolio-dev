@@ -1,0 +1,103 @@
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-boot);
+  background: var(--bg-sunk);
+  display: grid;
+  place-items: center;
+  padding: var(--gutter);
+}
+
+.inner {
+  width: min(46rem, 100%);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  transition: opacity 260ms var(--ease-out), transform 420ms var(--ease-out);
+}
+
+.boot[data-closing] .inner {
+  opacity: 0;
+  transform: translateY(-0.75rem);
+}
+
+.log { display: grid; gap: 0.35rem; }
+
+.line {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: baseline;
+  gap: 0.6rem;
+  color: var(--ink-2);
+  animation: enter 240ms var(--ease-out) backwards;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateX(-0.4rem); }
+  to   { opacity: 1; transform: none; }
+}
+
+.caret { color: var(--amber); }
+.text { letter-spacing: 0.04em; }
+
+.dots {
+  height: 1px;
+  align-self: center;
+  background-image: linear-gradient(90deg, var(--ink-faint) 40%, transparent 0);
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+}
+
+.value { color: var(--ink-3); letter-spacing: 0.08em; }
+.value[data-tone='ok']     { color: var(--signal); }
+.value[data-tone='accent'] { color: var(--amber); }
+.value[data-tone='dim']    { color: var(--ink-4); }
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  color: var(--amber);
+  letter-spacing: 0.05em;
+}
+
+.bar { letter-spacing: -0.05em; }
+.empty { color: var(--ink-faint); }
+.pct { color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: pre; }
+
+.hint {
+  margin-top: 2.5rem;
+  color: var(--ink-4);
+  font-size: var(--step--2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* the curtain wipes upward, uncovering the hero underneath */
+.curtain {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-sunk);
+  transform-origin: top;
+  transform: scaleY(0);
+  z-index: -1;
+}
+.boot[data-closing] {
+  background: transparent;
+  pointer-events: none;
+}
+.boot[data-closing] .curtain {
+  background: var(--bg-sunk);
+  transform-origin: bottom;
+  transform: scaleY(1);
+  animation: wipe 700ms var(--ease-in-out) forwards;
+}
+
+@keyframes wipe {
+  from { transform: scaleY(1); }
+  to   { transform: scaleY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot { display: none; }
+}

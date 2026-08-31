@@ -1,0 +1,213 @@
+.section {
+  padding-top: var(--section-y);
+}
+
+/* ------------------------------------------------------------------ email */
+.emailRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--rule);
+}
+
+.email {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 0.6rem + 4.6vw, 4.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+  word-break: break-word;
+  background-image: linear-gradient(var(--amber), var(--amber));
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  transition:
+    color var(--dur-2) var(--ease-out),
+    background-size var(--dur-3) var(--ease-out);
+}
+.email:hover {
+  color: var(--amber);
+  background-size: 100% 2px;
+}
+
+.copy {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.75rem;
+  transition:
+    color var(--dur-1),
+    border-color var(--dur-1),
+    background var(--dur-1);
+}
+.copy:hover {
+  color: var(--ink);
+  border-color: var(--rule-hard);
+}
+.copy[data-copied] {
+  color: #0a0a0a;
+  background: var(--signal);
+  border-color: var(--signal);
+}
+
+/* ------------------------------------------------------------------- grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+
+.block {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.blockLabel {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.links {
+  display: grid;
+}
+
+.link {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  color: var(--ink-2);
+  transition:
+    color var(--dur-1),
+    padding-left var(--dur-2) var(--ease-out);
+}
+.link:hover {
+  color: var(--amber);
+  padding-left: 0.5rem;
+}
+
+.linkLabel {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+.link:hover .linkLabel {
+  color: var(--ink-3);
+}
+.linkHandle {
+  font-size: var(--step-0);
+  overflow-wrap: anywhere;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--step-1);
+  color: var(--ink);
+}
+.pulse {
+  width: 7px;
+  height: 7px;
+  background: var(--signal);
+  border-radius: 50%;
+  animation: pulse 2.4s var(--ease-out) infinite;
+}
+.pulseStatic {
+  width: 7px;
+  height: 7px;
+  background: var(--signal);
+  border-radius: 50%;
+  animation: pulse 2.4s var(--ease-out) infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--signal) 60%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.statusNote {
+  color: var(--ink-3);
+  line-height: 1.6;
+  max-width: 42ch;
+}
+
+.cv {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--rule-hard);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  transition:
+    color var(--dur-1),
+    border-color var(--dur-1),
+    background var(--dur-1);
+}
+.cv:hover {
+  color: #0a0a0a;
+  background: var(--amber);
+  border-color: var(--amber);
+}
+
+/* ----------------------------------------------------------------- footer */
+.footer {
+  border-top: 1px solid var(--rule);
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding-block: 1.5rem 2rem;
+}
+
+.footInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.1em;
+  color: var(--ink-4);
+}
+
+.built {
+  color: var(--ink-3);
+}
+.build {
+  display: inline-flex;
+  gap: 0.75rem;
+}
+.prov {
+  color: var(--amber-deep);
+  text-transform: uppercase;
+}

@@ -1,0 +1,97 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  pointer-events: none;
+}
+
+.curtain[data-phase="idle"] {
+  display: none;
+}
+.curtain[data-phase="cover"],
+.curtain[data-phase="uncover"] {
+  pointer-events: all;
+}
+
+.curtain > span {
+  --i: 0;
+  --n: 7;
+  background: var(--bg-sunk);
+  border-right: 1px solid color-mix(in oklab, var(--amber) 38%, transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.curtain[data-phase="cover"] > span {
+  animation: close 420ms var(--ease-in-out) forwards;
+  animation-delay: calc(var(--i) * 40ms);
+}
+
+.curtain[data-phase="uncover"] > span {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  animation: open 520ms var(--ease-in-out) forwards;
+  /* uncover runs right to left, so the eye is led back across the page */
+  animation-delay: calc((var(--n) - 1 - var(--i)) * 40ms);
+}
+
+@keyframes close {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes open {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+/* the destination, named in the middle of the cut */
+.label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--amber);
+  opacity: 0;
+  text-indent: 0.5em;
+}
+
+.curtain[data-phase="cover"] .label {
+  animation: flash 300ms var(--ease-out) 240ms forwards;
+}
+
+.curtain[data-phase="uncover"] .label {
+  opacity: 1;
+  animation: dim 260ms linear forwards;
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+    letter-spacing: 0.8em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.42em;
+  }
+}
+
+@keyframes dim {
+  to {
+    opacity: 0;
+  }
+}

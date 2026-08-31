@@ -1,0 +1,54 @@
+.lines {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-grid);
+  pointer-events: none;
+  padding-left: var(--rail);
+}
+
+.columns {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+.columns > span {
+  border-left: 1px solid var(--rule-soft);
+}
+/* close the last column so the grid reads as a bounded field */
+.columns > span:last-child {
+  border-right: 1px solid var(--rule-soft);
+}
+
+@media (max-width: 860px) {
+  .columns { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .columns > span:nth-child(n + 7) { display: none; }
+}
+
+.ruler {
+  position: absolute;
+  top: 0;
+  left: var(--rail);
+  right: 0;
+  height: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rule-soft);
+  padding-inline: var(--gutter);
+}
+
+.ruler > span {
+  width: 1px;
+  height: 0.3rem;
+  background: var(--rule);
+}
+.ruler > span[data-major] {
+  height: 0.65rem;
+  background: var(--rule-hard);
+}

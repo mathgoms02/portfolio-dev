@@ -1,0 +1,87 @@
+.section { padding-block: var(--section-y); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.6rem;
+  height: 100%;
+  padding: 1.15rem 1.15rem 1.05rem;
+  background: var(--bg);
+  transition: background var(--dur-2) var(--ease-out);
+}
+.card:hover { background: var(--bg-raise-2); }
+
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--step-2);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color var(--dur-1);
+}
+.card:hover .cardName { color: var(--amber); }
+
+.cardYear {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.1em;
+  color: var(--ink-4);
+}
+
+.cardNote {
+  color: var(--ink-3);
+  font-size: var(--step--1);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.cardFoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  align-self: end;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.55rem; color: var(--ink-4); }
+.freshness { color: var(--ink-4); white-space: nowrap; }
+
+.all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule-hard);
+  transition: color var(--dur-1), border-color var(--dur-1), gap var(--dur-2) var(--ease-out);
+}
+.all:hover { color: var(--amber); border-color: var(--amber); gap: 1.25rem; }

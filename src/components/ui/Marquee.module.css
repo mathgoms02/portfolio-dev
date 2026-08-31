@@ -1,0 +1,39 @@
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: slide linear infinite;
+}
+.track[data-reverse] { animation-direction: reverse; }
+.marquee:hover .track { animation-play-state: paused; }
+
+.run {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  padding-right: clamp(1rem, 2.5vw, 2rem);
+  white-space: nowrap;
+}
+
+.sep { color: var(--amber); opacity: 0.55; }
+
+@keyframes slide {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+  .marquee { mask-image: none; overflow-x: auto; }
+}

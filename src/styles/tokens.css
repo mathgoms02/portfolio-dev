@@ -1,0 +1,79 @@
+/* ------------------------------------------------------------------
+   Design tokens — "Terminal Editorial"
+   Warm off-white ink on near-black, one amber accent, exposed grid.
+------------------------------------------------------------------ */
+:root {
+  /* --- surfaces --- */
+  --bg:          #0a0a0a;
+  --bg-sunk:     #060606;
+  --bg-raise:    #101010;
+  --bg-raise-2:  #161615;
+
+  /* --- ink --- */
+  --ink:         #edeae4;   /* 16.5:1 on --bg */
+  --ink-2:       #a8a29a;   /*  7.8:1 — secondary body copy */
+  --ink-3:       #918b82;   /*  5.9:1 — labels and meta */
+  --ink-4:       #7f7a71;   /*  4.6:1 — the quietest readable tone */
+  --ink-faint:   #4a453f;   /*  decorative only: rules, dots, separators */
+
+  /* --- accent --- */
+  --amber:       #ffb000;
+  --amber-soft:  #ffc74d;
+  --amber-deep:  #b87a00;
+  --ember:       #ff4d1c;
+  --signal:      #57d97b;
+
+  /* --- rules --- */
+  --rule:        color-mix(in oklab, var(--ink) 13%, transparent);
+  --rule-soft:   color-mix(in oklab, var(--ink) 7%, transparent);
+  --rule-hard:   color-mix(in oklab, var(--ink) 26%, transparent);
+
+  /* --- type --- */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', 'Haettenschweiler', sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  --font-sans:    'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* fluid scale — 360px → 1600px */
+  --step--2: clamp(0.625rem, 0.60rem + 0.11vw, 0.688rem);
+  --step--1: clamp(0.75rem,  0.72rem + 0.13vw, 0.813rem);
+  --step-0:  clamp(0.875rem, 0.84rem + 0.16vw, 0.95rem);
+  --step-1:  clamp(1rem,     0.95rem + 0.24vw, 1.125rem);
+  --step-2:  clamp(1.25rem,  1.15rem + 0.45vw, 1.5rem);
+  --step-3:  clamp(1.6rem,   1.40rem + 0.90vw, 2.25rem);
+  --step-4:  clamp(2.2rem,   1.75rem + 2.00vw, 3.5rem);
+  --step-5:  clamp(3rem,     2.10rem + 4.00vw, 5.5rem);
+  --step-6:  clamp(4rem,     2.00rem + 9.00vw, 10rem);
+  --step-7:  clamp(4rem,     0.50rem + 14.0vw, 13rem);
+
+  /* --- layout --- */
+  --gutter:  clamp(1rem, 0.6rem + 1.8vw, 2.25rem);
+  --rail:    0px;                              /* fixed left index rail */
+  --maxw:    112rem;
+  --section-y: clamp(5rem, 3rem + 9vw, 11rem);
+
+  /* --- motion --- */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-snap:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-1: 180ms;
+  --dur-2: 340ms;
+  --dur-3: 620ms;
+  --dur-4: 1000ms;
+
+  --z-grid: 1;
+  --z-content: 10;
+  --z-rail: 40;
+  --z-header: 50;
+  --z-overlay: 70;
+  --z-palette: 80;
+  --z-boot: 90;
+  --z-grain: 95;
+  --z-cursor: 100;
+}
+
+@media (min-width: 1100px) { :root { --rail: 12rem; } }
+@media (min-width: 1600px) { :root { --rail: 14rem; } }
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-1: 1ms; --dur-2: 1ms; --dur-3: 1ms; --dur-4: 1ms; }
+}

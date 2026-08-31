@@ -1,0 +1,78 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 220ms linear;
+}
+.root[data-visible] { opacity: 1; }
+
+.dot,
+.ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  background: var(--amber);
+  border-radius: 50%;
+  transition: width 200ms var(--ease-out), height 200ms var(--ease-out), margin 200ms var(--ease-out), background 200ms;
+}
+.dot[data-mode='link'] { width: 3px; height: 3px; margin: -1.5px 0 0 -1.5px; }
+.dot[data-mode='view'] { width: 0; height: 0; margin: 0; }
+
+.ring {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  transition: width 320ms var(--ease-out), height 320ms var(--ease-out), margin 320ms var(--ease-out);
+}
+
+.ring[data-mode='link'] { width: 52px; height: 52px; margin: -26px 0 0 -26px; }
+.ring[data-mode='view'] { width: 92px; height: 92px; margin: -46px 0 0 -46px; }
+
+/* four arms that form an open crosshair rather than a filled circle */
+.arm {
+  position: absolute;
+  background: var(--amber);
+  opacity: 0.85;
+  transition: inherit;
+}
+.arm[data-side='n'] { top: 0;    left: 50%; width: 1px; height: 26%; transform: translateX(-50%); }
+.arm[data-side='s'] { bottom: 0; left: 50%; width: 1px; height: 26%; transform: translateX(-50%); }
+.arm[data-side='w'] { left: 0;   top: 50%;  height: 1px; width: 26%; transform: translateY(-50%); }
+.arm[data-side='e'] { right: 0;  top: 50%;  height: 1px; width: 26%; transform: translateY(-50%); }
+
+.ring[data-mode='view'] .arm { opacity: 0.4; }
+
+.ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--amber);
+  border-radius: 50%;
+  opacity: 0.22;
+  transition: opacity 260ms var(--ease-out), inset 260ms var(--ease-out);
+}
+.ring[data-mode='view']::before { opacity: 0.9; inset: 0; }
+
+.label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-align: center;
+  line-height: 1.2;
+  padding: 0 0.75rem;
+}

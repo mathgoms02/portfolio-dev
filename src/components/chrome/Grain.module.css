@@ -1,0 +1,42 @@
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-grain);
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  /* shifting the tile is far cheaper than transforming an oversized layer */
+  animation: drift 1s steps(1) infinite;
+}
+
+/* horizontal scanline, sitting under the grain */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2) 0px,
+    rgba(0, 0, 0, 0.2) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+}
+
+@keyframes drift {
+  0%   { background-position: 0 0; }
+  20%  { background-position: -37px 19px; }
+  40%  { background-position: 23px -41px; }
+  60%  { background-position: -19px -13px; }
+  80%  { background-position: 41px 29px; }
+  100% { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain { animation: none; opacity: 0.28; }
+  .grain::after { display: none; }
+}
