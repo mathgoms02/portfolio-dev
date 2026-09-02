@@ -1,7 +1,7 @@
 import { SECTIONS } from "../../data/sections";
 import { useLocale } from "../../i18n/LocaleContext";
 import { useActiveSection } from "../../lib/useActiveSection";
-import { useLocalTime } from "../../lib/useLocalTime";
+// import { useLocalTime } from "../../lib/useLocalTime";
 import { useScrollControl } from "../../lib/ScrollProvider";
 import { useTransition } from "../../lib/TransitionProvider";
 import { identity } from "../../data/profile";
@@ -13,7 +13,7 @@ export function Rail() {
   const active = useActiveSection();
   const { scrollTo, progress } = useScrollControl();
   const { navigate } = useTransition();
-  const time = useLocalTime();
+  // const time = useLocalTime();
 
   return (
     <nav

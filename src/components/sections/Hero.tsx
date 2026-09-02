@@ -13,7 +13,7 @@ import {
 import { useLocale } from "../../i18n/LocaleContext";
 import { ui } from "../../i18n/ui";
 import { useScrollControl } from "../../lib/ScrollProvider";
-import { useLocalTime } from "../../lib/useLocalTime";
+// import { useLocalTime } from "../../lib/useLocalTime";
 import { Magnetic } from "../ui/Magnetic";
 import { Marquee } from "../ui/Marquee";
 import { ScrambleText } from "../ui/ScrambleText";
@@ -46,7 +46,7 @@ interface Props {
 export function Hero({ ready }: Props) {
   const { locale, t } = useLocale();
   const { scrollTo } = useScrollControl();
-  const time = useLocalTime();
+  // const time = useLocalTime();
   const [resolved, setResolved] = useState(false);
   const [hover, setHover] = useState(false);
   const [asciiReady, setAsciiReady] = useState(false);
