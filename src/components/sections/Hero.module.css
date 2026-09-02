@@ -389,6 +389,7 @@
   padding: 0.7rem 1.15rem;
   background: var(--amber);
   color: #0a0a0a;
+  border-radius: 5px;
   font-family: var(--font-mono);
   font-size: var(--step--1);
   font-weight: 600;
@@ -411,6 +412,7 @@
   align-items: center;
   padding: 0.7rem 1.15rem;
   border: 1px solid var(--rule-hard);
+  border-radius: 5px;
   font-family: var(--font-mono);
   font-size: var(--step--1);
   letter-spacing: 0.1em;

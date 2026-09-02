@@ -84,8 +84,8 @@ export const ui = {
   },
   contact: {
     lead: {
-      pt: "Se você chegou até aqui, provavelmente tem algo em mente. Me escreva — respondo rápido.",
-      en: "If you made it this far, you probably have something in mind. Write to me — I answer fast.",
+      pt: "Se você chegou até aqui, provavelmente tem algo em mente. Me escreva.",
+      en: "If you made it this far, you probably have something in mind. Write to me.",
     },
     emailCta: { pt: "Enviar um email", en: "Send an email" },
     elsewhere: { pt: "Em outros lugares", en: "Elsewhere" },

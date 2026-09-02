@@ -1,8 +1,15 @@
-.section { padding-block: var(--section-y); }
+.section {
+  padding-block: var(--section-y);
+}
 
-.list { display: grid; border-top: 1px solid var(--rule); }
+.list {
+  display: grid;
+  border-top: 1px solid var(--rule);
+}
 
-.row { border-bottom: 1px solid var(--rule); }
+.row {
+  border-bottom: 1px solid var(--rule);
+}
 
 .trigger {
   position: relative;
@@ -17,20 +24,28 @@
 }
 
 .trigger:hover,
-.trigger:focus-visible { padding-left: 1.25rem; }
+.trigger:focus-visible {
+  padding-left: 1.25rem;
+}
 
 /* an amber wash that wipes in from the left on hover */
 .sweep {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, color-mix(in oklab, var(--tint) 11%, transparent), transparent 62%);
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--tint) 11%, transparent),
+    transparent 62%
+  );
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--dur-3) var(--ease-out);
   pointer-events: none;
 }
 .trigger:hover .sweep,
-.trigger:focus-visible .sweep { transform: scaleX(1); }
+.trigger:focus-visible .sweep {
+  transform: scaleX(1);
+}
 
 .index {
   align-self: start;
@@ -41,9 +56,15 @@
   padding-top: 0.5rem;
   transition: color var(--dur-2) var(--ease-out);
 }
-.trigger:hover .index { color: var(--tint); }
+.trigger:hover .index {
+  color: var(--tint);
+}
 
-.main { display: grid; gap: 0.5rem; min-width: 0; }
+.main {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+}
 
 .name {
   font-family: var(--font-display);
@@ -55,7 +76,9 @@
   color: var(--ink);
   transition: color var(--dur-2) var(--ease-out);
 }
-.trigger:hover .name { color: var(--tint); }
+.trigger:hover .name {
+  color: var(--tint);
+}
 
 .tagline {
   color: var(--ink-2);
@@ -76,7 +99,9 @@
   text-transform: uppercase;
   color: var(--ink-4);
 }
-.more { color: var(--ink-3); }
+.more {
+  color: var(--ink-3);
+}
 
 .aside {
   display: grid;
@@ -89,17 +114,30 @@
   white-space: nowrap;
 }
 
-.year { color: var(--ink-3); }
+.year {
+  color: var(--ink-3);
+}
 
 .status {
   border: 1px solid var(--rule);
+  border-radius: 10px;
   padding: 0.1rem 0.45rem;
   color: var(--ink-3);
 }
-.status[data-status='active'] { border-color: var(--amber-deep); color: var(--amber); }
-.status[data-status='live']   { border-color: var(--signal); color: var(--signal); }
+.status[data-status="active"] {
+  border-color: var(--amber-deep);
+  color: var(--amber);
+}
+.status[data-status="live"] {
+  border-color: var(--signal);
+  color: var(--signal);
+}
 
-.repoMeta { display: flex; gap: 0.75rem; color: var(--ink-4); }
+.repoMeta {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--ink-4);
+}
 
 .restricted {
   display: inline-flex;
@@ -113,19 +151,30 @@
   color: var(--ink-4);
   transform: translateX(-0.5rem);
   opacity: 0;
-  transition: transform var(--dur-3) var(--ease-out), opacity var(--dur-2) var(--ease-out), color var(--dur-2);
+  transition:
+    transform var(--dur-3) var(--ease-out),
+    opacity var(--dur-2) var(--ease-out),
+    color var(--dur-2);
 }
 .trigger:hover .arrow,
-.trigger:focus-visible .arrow { opacity: 1; transform: translateX(0); color: var(--tint); }
+.trigger:focus-visible .arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--tint);
+}
 
 @media (max-width: 860px) {
   .trigger {
     grid-template-columns: 2.75rem minmax(0, 1fr);
-    grid-template-areas: 'index main' '. aside';
+    grid-template-areas: "index main" ". aside";
     row-gap: 0.9rem;
   }
-  .index { grid-area: index; }
-  .main  { grid-area: main; }
+  .index {
+    grid-area: index;
+  }
+  .main {
+    grid-area: main;
+  }
   .aside {
     grid-area: aside;
     grid-auto-flow: column;
@@ -134,8 +183,12 @@
     align-items: center;
     gap: 0.65rem;
   }
-  .arrow { display: none; }
-  .name { font-size: var(--step-3); }
+  .arrow {
+    display: none;
+  }
+  .name {
+    font-size: var(--step-3);
+  }
 }
 
 /* ------------------------------------------------------------- provenance */
@@ -152,8 +205,11 @@
 }
 
 .dot {
-  width: 5px; height: 5px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--ink-faint);
 }
-.dot[data-live] { background: var(--signal); }
+.dot[data-live] {
+  background: var(--signal);
+}

@@ -14,7 +14,14 @@
   animation: fade 300ms var(--ease-out);
   cursor: default;
 }
-@keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .panel {
   position: relative;
@@ -30,13 +37,21 @@
 }
 
 @keyframes slide {
-  from { transform: translateX(100%); }
-  to   { transform: none; }
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .panel { animation: none; }
-  .scrim { animation: none; }
+  .panel {
+    animation: none;
+  }
+  .scrim {
+    animation: none;
+  }
 }
 
 /* ------------------------------------------------------------------- head */
@@ -46,10 +61,12 @@
   position: relative;
 }
 .head::after {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0; bottom: -1px;
-  width: 4rem; height: 1px;
+  left: 0;
+  bottom: -1px;
+  width: 4rem;
+  height: 1px;
   background: var(--tint);
 }
 
@@ -63,8 +80,13 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
-.index { color: var(--tint); font-weight: 600; }
-.meta { color: var(--ink-4); }
+.index {
+  color: var(--tint);
+  font-weight: 600;
+}
+.meta {
+  color: var(--ink-4);
+}
 
 .close {
   margin-left: auto;
@@ -78,9 +100,15 @@
   text-transform: inherit;
   font-family: inherit;
   font-size: inherit;
-  transition: color var(--dur-1), border-color var(--dur-1);
+  border-radius: 5px;
+  transition:
+    color var(--dur-1),
+    border-color var(--dur-1);
 }
-.close:hover { color: var(--ink); border-color: var(--rule-hard); }
+.close:hover {
+  color: var(--ink);
+  border-color: var(--rule-hard);
+}
 
 .name {
   font-family: var(--font-display);
@@ -123,7 +151,10 @@
   text-wrap: pretty;
 }
 
-.block { display: grid; gap: 0.75rem; }
+.block {
+  display: grid;
+  gap: 0.75rem;
+}
 
 .blockLabel {
   font-family: var(--font-mono);
@@ -135,9 +166,16 @@
   border-bottom: 1px solid var(--rule);
 }
 
-.blockText { color: var(--ink-2); line-height: 1.65; text-wrap: pretty; }
+.blockText {
+  color: var(--ink-2);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
 
-.blockList { display: grid; gap: 0.7rem; }
+.blockList {
+  display: grid;
+  gap: 0.7rem;
+}
 .blockList li {
   position: relative;
   padding-left: 1.35rem;
@@ -146,21 +184,28 @@
   text-wrap: pretty;
 }
 .blockList li::before {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0; top: 0.62em;
-  width: 0.7rem; height: 1px;
+  left: 0;
+  top: 0.62em;
+  width: 0.7rem;
+  height: 1px;
   background: var(--tint);
   opacity: 0.7;
 }
 
-.stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
 .stack li {
   font-family: var(--font-mono);
   font-size: var(--step--2);
   letter-spacing: 0.08em;
   color: var(--ink-2);
   border: 1px solid var(--rule);
+  border-radius: 5px;
   padding: 0.22rem 0.55rem;
 }
 
@@ -176,7 +221,11 @@
   text-transform: uppercase;
   color: var(--ink-4);
 }
-.repoStats dd { color: var(--ink); font-size: var(--step-1); margin-top: 0.2rem; }
+.repoStats dd {
+  color: var(--ink);
+  font-size: var(--step-1);
+  margin-top: 0.2rem;
+}
 
 /* ------------------------------------------------------------------- foot */
 .foot {
@@ -194,12 +243,16 @@
   gap: 0.55rem;
   padding: 0.6rem 1rem;
   border: 1px solid var(--rule-hard);
+  border-radius: 5px;
   font-family: var(--font-mono);
   font-size: var(--step--2);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-2);
-  transition: color var(--dur-1), border-color var(--dur-1), background var(--dur-1);
+  transition:
+    color var(--dur-1),
+    border-color var(--dur-1),
+    background var(--dur-1);
 }
 .link:hover {
   color: #0a0a0a;

@@ -52,22 +52,22 @@ export const cvFile = "matheus-gomes-cv.pdf";
  * carry the evidence.
  */
 export const summary: L = {
-  pt: "Engenheiro de Computação graduado pelo UNASP. Passei quatro anos entre o chão de fábrica e o laboratório de P&D: automatizei o que era manual na Martinrea, construí ferramentas internas e pipelines de Machine Learning na Motorola, e hoje transformo protótipos gerados por IA em software de produção — estruturado, testado e escalável.",
-  en: "Computer Engineer, graduated from UNASP. I spent four years between the factory floor and the R&D lab: I automated manual work at Martinrea, built internal tooling and Machine Learning pipelines at Motorola, and today I turn AI-generated prototypes into production software — structured, tested and scalable.",
+  pt: "Engenheiro de Computação graduado pelo UNASP. Passei quatro anos entre o chão de fábrica e o laboratório de P&D: automatizei o que era manual na Martinrea, construí ferramentas internas e pipelines de Machine Learning na Motorola, e hoje transformo protótipos gerados por IA em software de produção.",
+  en: "Computer Engineer, graduated from UNASP. I spent four years between the factory floor and the R&D lab: I automated manual work at Martinrea, built internal tooling and Machine Learning pipelines at Motorola, and today I turn AI-generated prototypes into production software.",
 };
 
 export const positioning: L<string[]> = {
   pt: [
-    "Python e automação como base — SSH, ADB, Linux, scripts que rodam sem ninguém olhando.",
+    "Python e automação como base. SSH, ADB, Linux, scripts que rodam sem ninguém olhando.",
     "APIs seguras com Django REST e FastAPI, com autenticação, auditoria e controle de acesso por papel.",
-    "Front-end construído com CSS Grid de verdade: layout pensado, responsivo e acessível — não empilhamento de componentes prontos.",
-    "IA aplicada a problema real: LLMs locais, embeddings, watsonx.ai, Gemini — sempre resolvendo algo que dói.",
+    "Front-end construído com CSS Grid de verdade: layout pensado, responsivo e acessível(não empilhamento de componentes prontos).",
+    "IA aplicada a problema real: LLMs locais, embeddings, watsonx.ai, Gemini. Sempre resolvendo algo que dói.",
   ],
   en: [
-    "Python and automation as the foundation — SSH, ADB, Linux, scripts that run unattended.",
+    "Python and automation as the foundation. SSH, ADB, Linux, scripts that run unattended.",
     "Secure APIs with Django REST and FastAPI, with authentication, audit trails and role-based access control.",
-    "Front-end built on real CSS Grid: deliberate, responsive and accessible layout — not a stack of off-the-shelf components.",
-    "AI applied to real problems: local LLMs, embeddings, watsonx.ai, Gemini — always solving something that hurts.",
+    "Front-end built on real CSS Grid: deliberate, responsive and accessible layout (not a stack of off-the-shelf components).",
+    "AI applied to real problems: local LLMs, embeddings, watsonx.ai, Gemini. Always solving something that hurts.",
   ],
 };
 

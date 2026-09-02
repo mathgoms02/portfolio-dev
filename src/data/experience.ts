@@ -22,7 +22,7 @@ export const roles: Role[] = [
         "Domain-driven refactoring, understand the business rule before touching the code e system design.",
       ],
     },
-    stack: ["C#", ".NET Framework", "Python", "SQL", "Git"],
+    stack: ["C#", ".NET Framework", "Python", "SQL", "Git", "Claude"],
   },
   {
     id: "freelance",
@@ -130,7 +130,7 @@ export const roles: Role[] = [
     kind: { pt: "Voluntariado", en: "Volunteer" },
     start: "2023-01",
     end: "2025-12",
-    location: "Engenheiro Coelho, SP",
+    location: "Hortolândia, SP",
     bullets: {
       pt: [
         "Aulas gratuitas de Python conduzidas por alunos, supervisionadas por professores de Engenharia.",

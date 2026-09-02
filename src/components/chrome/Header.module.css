@@ -9,7 +9,9 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.9rem var(--gutter);
-  transition: background var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out);
+  transition:
+    background var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
   border-bottom: 1px solid transparent;
 }
 
@@ -27,9 +29,14 @@
   line-height: 1;
   transition: color var(--dur-1) var(--ease-out);
 }
-.mark:hover { color: var(--amber); }
+.mark:hover {
+  color: var(--amber);
+}
 @media (min-width: 1100px) {
-  .mark { opacity: 0; pointer-events: none; }
+  .mark {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .actions {
@@ -46,6 +53,7 @@
   gap: 0.55rem;
   height: 2.15rem;
   padding: 0 0.7rem;
+  border-radius: 5px;
   border: 1px solid var(--rule);
   font-family: var(--font-mono);
   font-size: var(--step--2);
@@ -67,8 +75,14 @@
   background: var(--bg-raise);
 }
 
-.searchLabel { display: none; }
-@media (min-width: 640px) { .searchLabel { display: inline; } }
+.searchLabel {
+  display: none;
+}
+@media (min-width: 640px) {
+  .searchLabel {
+    display: inline;
+  }
+}
 
 .kbd {
   display: none;
@@ -79,10 +93,17 @@
   padding: 0.05rem 0.3rem;
   letter-spacing: 0.05em;
 }
-@media (min-width: 640px) { .kbd { display: inline-block; } }
+@media (min-width: 640px) {
+  .kbd {
+    display: inline-block;
+  }
+}
 
 /* --- language switch --------------------------------------------------- */
-.lang { padding: 0; overflow: hidden; }
+.lang {
+  padding: 0;
+  overflow: hidden;
+}
 
 .langTrack {
   position: relative;
@@ -100,8 +121,10 @@
   transition: color var(--dur-2) var(--ease-out);
   font-weight: 500;
 }
-.langTrack[data-locale='pt'] > span[data-side='pt'],
-.langTrack[data-locale='en'] > span[data-side='en'] { color: #0a0a0a; }
+.langTrack[data-locale="pt"] > span[data-side="pt"],
+.langTrack[data-locale="en"] > span[data-side="en"] {
+  color: #0a0a0a;
+}
 
 .langThumb {
   position: absolute;
@@ -112,7 +135,14 @@
   background: var(--amber);
   transition: transform var(--dur-2) var(--ease-snap);
 }
-.langTrack[data-locale='en'] .langThumb { transform: translateX(2.1rem); }
+.langTrack[data-locale="en"] .langThumb {
+  transform: translateX(2.1rem);
+}
 
-.cv { color: var(--ink-2); }
-.cv:hover { color: var(--amber); border-color: var(--amber-deep); }
+.cv {
+  color: var(--ink-2);
+}
+.cv:hover {
+  color: var(--amber);
+  border-color: var(--amber-deep);
+}
