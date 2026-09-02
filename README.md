@@ -5,21 +5,21 @@ Portfólio pessoal de **Matheus Filipe da Silva Gomes** — Engenheiro de Comput
 Bilíngue (pt-BR / en), tema escuro, tipografia display sobre grid de 12 colunas escrito à
 mão em CSS. Sem framework de UI, sem biblioteca de componentes, sem Tailwind.
 
-🔗 https://mathgoms02.github.io/portfolio-dev/
+🔗 https://mathgoms02.github.io/portfolio-dev-v2/
 
 ---
 
 ## Stack
 
-| Camada      | Escolha                                                        |
-| ----------- | -------------------------------------------------------------- |
-| Build       | Vite 8                                                          |
-| UI          | React 19 + TypeScript (strict)                                  |
-| Estilo      | CSS Modules + design tokens em `src/styles/tokens.css`          |
-| Scroll      | [Lenis](https://github.com/darkroomengineering/lenis)           |
-| Animação    | CSS puro + `IntersectionObserver` — nenhuma lib de animação      |
-| Fundo       | Campo de limalha magnética em Canvas 2D                          |
-| Dados vivos | API pública do GitHub, com snapshot local como fallback          |
+| Camada      | Escolha                                                     |
+| ----------- | ----------------------------------------------------------- |
+| Build       | Vite 8                                                      |
+| UI          | React 19 + TypeScript (strict)                              |
+| Estilo      | CSS Modules + design tokens em `src/styles/tokens.css`      |
+| Scroll      | [Lenis](https://github.com/darkroomengineering/lenis)       |
+| Animação    | CSS puro + `IntersectionObserver` — nenhuma lib de animação |
+| Fundo       | Campo de limalha magnética em Canvas 2D                     |
+| Dados vivos | API pública do GitHub, com snapshot local como fallback     |
 
 O bundle não carrega nenhuma biblioteca de animação: as transições são transições e
 `@keyframes` de CSS, disparadas por um atributo `data-shown` que um `IntersectionObserver`
@@ -64,14 +64,14 @@ npm run lint
 Todo o conteúdo editorial fica em `src/data/`, tipado e bilíngue — nenhum texto é escrito
 direto no JSX:
 
-| Arquivo                | Conteúdo                                             |
-| ---------------------- | ---------------------------------------------------- |
-| `profile.ts`           | identidade, contatos, resumo, métricas, formação      |
-| `experience.ts`        | cargos, conquistas medidas, eventos, cursos           |
-| `projects.ts`          | 7 projetos em destaque + o "laboratório"              |
-| `stack.ts`             | ferramentas agrupadas, com nível de uso               |
-| `sections.ts`          | registro das seções (índice, rail, command palette)   |
-| `github-snapshot.ts`   | **gerado** — não editar à mão                         |
+| Arquivo              | Conteúdo                                            |
+| -------------------- | --------------------------------------------------- |
+| `profile.ts`         | identidade, contatos, resumo, métricas, formação    |
+| `experience.ts`      | cargos, conquistas medidas, eventos, cursos         |
+| `projects.ts`        | 7 projetos em destaque + o "laboratório"            |
+| `stack.ts`           | ferramentas agrupadas, com nível de uso             |
+| `sections.ts`        | registro das seções (índice, rail, command palette) |
+| `github-snapshot.ts` | **gerado** — não editar à mão                       |
 
 Cada campo bilíngue tem o tipo `L<T> = Record<'pt' | 'en', T>` e é resolvido pelo hook
 `useLocale().t(...)`, então adicionar um idioma é adicionar uma chave.
@@ -117,7 +117,7 @@ src/
 ## Deploy
 
 Push na `main` dispara `.github/workflows/deploy.yml`, que builda e publica no GitHub
-Pages. O `base` do Vite está fixado em `/portfolio-dev/` — se o repositório for renomeado,
+Pages. O `base` do Vite está fixado em `/portfolio-dev-v2/` — se o repositório for renomeado,
 ajuste `vite.config.ts` junto.
 
 Em **Settings → Pages**, a origem precisa estar como **GitHub Actions**.
