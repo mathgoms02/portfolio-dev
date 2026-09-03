@@ -5,7 +5,7 @@ Portfólio pessoal de **Matheus Filipe da Silva Gomes** — Engenheiro de Comput
 Bilíngue (pt-BR / en), tema escuro, tipografia display sobre grid de 12 colunas escrito à
 mão em CSS. Sem framework de UI, sem biblioteca de componentes, sem Tailwind.
 
-🔗 https://mathgoms02.github.io/portfolio-dev-v2/
+🔗 https://mathgoms02.github.io/portfolio-dev/
 
 ---
 
@@ -117,7 +117,7 @@ src/
 ## Deploy
 
 Push na `main` dispara `.github/workflows/deploy.yml`, que builda e publica no GitHub
-Pages. O `base` do Vite está fixado em `/portfolio-dev-v2/` — se o repositório for renomeado,
+Pages. O `base` do Vite está fixado em `/portfolio-dev/` — se o repositório for renomeado,
 ajuste `vite.config.ts` junto.
 
 Em **Settings → Pages**, a origem precisa estar como **GitHub Actions**.
