@@ -4,8 +4,9 @@ import { contact, cvFile } from '../../data/profile'
 import { projects } from '../../data/projects'
 import { useLocale } from '../../i18n/LocaleContext'
 import { ui } from '../../i18n/ui'
-import { useScrollControl } from '../../lib/ScrollProvider'
+import { useScrollActions } from '../../lib/ScrollProvider'
 import { useTransition } from '../../lib/TransitionProvider'
+import { useDismissLayer } from '../../lib/useDismissLayer'
 import { setMotionOverride, useReducedMotion } from '../../lib/useMotionPref'
 import styles from './CommandPalette.module.css'
 
@@ -40,7 +41,7 @@ function matches(haystack: string, needle: string): boolean {
 
 export function CommandPalette({ open, onClose }: Props) {
   const { locale, toggle, t } = useLocale()
-  const { stop, start } = useScrollControl()
+  const { stop, start } = useScrollActions()
   const { navigate } = useTransition()
   const reduced = useReducedMotion()
   const [query, setQuery] = useState('')
@@ -155,24 +156,30 @@ export function CommandPalette({ open, onClose }: Props) {
 
   useEffect(() => setCursor(0), [query])
 
+  // Balanced lock: one stop() on open, one start() on close. The old version
+  // called start() from the closed branch, which released a lock this palette
+  // never took — and unstopped the page under an open case sheet.
+  useEffect(() => {
+    if (!open) return
+    stop()
+    return start
+  }, [open, start, stop])
+
   useEffect(() => {
     if (!open) {
       setQuery('')
-      start()
       return
     }
-    stop()
     const id = requestAnimationFrame(() => inputRef.current?.focus())
     return () => cancelAnimationFrame(id)
-  }, [open, start, stop])
+  }, [open])
+
+  useDismissLayer(open, onClose)
 
   useEffect(() => {
     if (!open) return
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault()
-        onClose()
-      } else if (e.key === 'ArrowDown') {
+      if (e.key === 'ArrowDown') {
         e.preventDefault()
         setCursor((c) => (c + 1) % Math.max(1, results.length))
       } else if (e.key === 'ArrowUp') {
@@ -185,7 +192,7 @@ export function CommandPalette({ open, onClose }: Props) {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [open, results, cursor, onClose])
+  }, [open, results, cursor])
 
   useEffect(() => {
     listRef.current
@@ -216,7 +223,7 @@ export function CommandPalette({ open, onClose }: Props) {
           <kbd className={styles.esc}>esc</kbd>
         </div>
 
-        <div className={styles.results} ref={listRef}>
+        <div className={styles.results} ref={listRef} data-lenis-prevent>
           {grouped.length === 0 ? (
             <p className={styles.empty}>{ui.palette.empty[locale]}</p>
           ) : (

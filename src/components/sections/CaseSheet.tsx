@@ -3,7 +3,8 @@ import type { Project } from "../../data/types";
 import { useLocale } from "../../i18n/LocaleContext";
 import { ui } from "../../i18n/ui";
 import { relativeTime } from "../../lib/format";
-import { useScrollControl } from "../../lib/ScrollProvider";
+import { useScrollActions } from "../../lib/ScrollProvider";
+import { useDismissLayer } from "../../lib/useDismissLayer";
 import type { RepoMeta } from "../../lib/useGithub";
 import styles from "./CaseSheet.module.css";
 
@@ -15,31 +16,25 @@ interface Props {
 
 export function CaseSheet({ project, repo, onClose }: Props) {
   const { locale, t } = useLocale();
-  const { stop, start } = useScrollControl();
+  const { stop, start } = useScrollActions();
   const panelRef = useRef<HTMLDivElement>(null);
   const open = project !== null;
 
+  // The lock stands on its own effect so an unstable `onClose` from the parent
+  // cannot tear it down and rebuild it. Every stop() is paired with a start().
   useEffect(() => {
-    if (!open) {
-      start();
-      return;
-    }
+    if (!open) return;
     stop();
-    document.body.style.overflow = "hidden";
+    return start;
+  }, [open, start, stop]);
+
+  useDismissLayer(open, onClose);
+
+  useEffect(() => {
+    if (!open) return;
     const id = requestAnimationFrame(() => panelRef.current?.focus());
-
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", onKey);
-
-    return () => {
-      cancelAnimationFrame(id);
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-      start();
-    };
-  }, [open, onClose, start, stop]);
+    return () => cancelAnimationFrame(id);
+  }, [open]);
 
   if (!project) return null;
 
@@ -106,7 +101,9 @@ export function CaseSheet({ project, repo, onClose }: Props) {
           <p className={styles.role}>{t(project.role)}</p>
         </header>
 
-        <div className={styles.content}>
+        {/* Lenis swallows the wheel everywhere it is not told to keep out —
+            without this the page behind scrolls instead of the panel. */}
+        <div className={styles.content} data-lenis-prevent>
           <p className={styles.summary}>{t(project.summary)}</p>
 
           {blocks.map((block) => (

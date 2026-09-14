@@ -87,6 +87,7 @@
 
 .results {
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 0.5rem 0;
 }
 
