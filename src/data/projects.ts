@@ -52,9 +52,60 @@ export const projects: Project[] = [
     links: [{ label: { pt: 'Repositório', en: 'Repository' }, href: 'https://github.com/mathgoms02/BusSense', kind: 'repo' }],
   },
   {
+    id: 'cybercafe',
+    index: '002',
+    name: 'Cyber-Café Manager',
+    year: '2026',
+    status: 'live',
+    tint: '#e0688c',
+    role: { pt: 'Autor · Jogo & engine', en: 'Author · Game & engine' },
+    tagline: {
+      pt: 'Um café cyberpunk que também é um servidor',
+      en: 'A cyberpunk café that is also a server',
+    },
+    summary: {
+      pt: 'Jogo web que ensina Node.js, back-end, APIs e assincronismo colocando quem joga para escrever o server.js de um café cyberpunk 8-bits. São cinco atos e vinte turnos: o código escrito roda de verdade, e o café inteiro congela quando ele bloqueia o event loop.',
+      en: 'A browser game that teaches Node.js, back-end, APIs and asynchrony by making the player write the server.js of an 8-bit cyberpunk café. Five acts, twenty shifts: the code you write actually runs, and the whole café freezes the moment it blocks the event loop.',
+    },
+    problem: {
+      pt: 'Assincronismo se aprende lendo sobre ele e não acreditando muito. Event loop, Promise.all, race condition e backpressure são invisíveis: errar produz um número pior num log, não uma consequência que dê para ver. Sem enxergar o que travou, não dá para entender por que travou.',
+      en: 'Asynchrony is normally learnt by reading about it and not quite believing it. The event loop, Promise.all, race conditions and backpressure are invisible: getting them wrong produces a worse number in a log, not a consequence you can watch. If you cannot see what stalled, you cannot understand why.',
+    },
+    approach: {
+      pt: [
+        'Engine própria que reimplementa o laço do event loop sobre um relógio virtual: 15 segundos de simulação custam ~2ms reais, o resultado é determinístico e o mesmo código roda em câmera lenta para a lição ficar visível.',
+        'O código de quem joga executa de verdade, numa thread separada, com watchdog de dois limiares — 250ms sem pulso acende o banner de servidor travado (bloquear é a lição do Ato 1), 5s mata o Worker e aborta a rodada.',
+        'Portão de AST com acorn antes de cada rodada: a árvore decide o que existe — só o que já foi comprado na loja —, a simulação decide o que funciona. Solução criativa passa; o portão controla o ritmo do aprendizado, não corrige a lição de casa.',
+        'Cinco atos que sobem a escada inteira: event loop e promessas, rotas HTTP e contratos JSON, middleware com rate limit e autenticação, banco de dados com corrida e transação, e worker threads com stream e backpressure.',
+        'ORB, o assistente, nunca fala primeiro e nunca entrega o código: cada pedido de dica desce um degrau e a pista mais funda aponta o manual. Junto vem um guia de 19 capítulos destravado por ato.',
+        'Pixel art 16-bit escrita como código em src/arte/ — a mesma função desenha no Canvas do jogo e no PNG de prévia, e o contorno dos sprites é gerado, não desenhado —, com trilha chiptune composta em partitura.',
+      ],
+      en: [
+        'A purpose-built engine that reimplements the event loop over a virtual clock: 15 seconds of simulation cost ~2ms of real time, the result is deterministic, and the same code runs in slow motion so the lesson becomes watchable.',
+        'The player\u2019s code really executes, on a separate thread, behind a two-threshold watchdog — 250ms without a heartbeat raises the frozen-server banner (blocking on purpose is the Act 1 lesson), 5s kills the Worker and aborts the run.',
+        'An acorn AST gate runs before every turn: the tree decides what exists — only what has been bought in the shop — and the simulation decides what works. A creative solution passes; the gate paces the learning, it does not mark the homework.',
+        'Five acts climbing the whole ladder: event loop and promises, HTTP routes and JSON contracts, middleware with rate limiting and auth, a database with race conditions and transactions, and worker threads with streams and backpressure.',
+        'ORB, the assistant, never speaks first and never hands over the code: each hint steps one rung down the ladder and the deepest one points at the manual. Alongside it, a 19-chapter guide unlocked act by act.',
+        '16-bit pixel art written as code in src/arte/ — the same function draws the game Canvas and the preview PNG, and sprite outlines are generated rather than drawn — over a chiptune soundtrack composed as a score.',
+      ],
+    },
+    outcome: {
+      pt: [
+        'Jogo completo: cinco atos, vinte turnos, treze pacotes de loja e catorze enfeites, cobertos por 467 testes que rodam sem browser.',
+        'Build estático sem back-end, sem cookie e sem análise de tráfego — o progresso fica no localStorage de quem joga e nada sai do navegador.',
+      ],
+      en: [
+        'A finished game: five acts, twenty shifts, thirteen shop packages and fourteen ornaments, covered by 467 tests that run without a browser.',
+        'A static build with no back-end, no cookies and no analytics — progress lives in the player\u2019s localStorage and nothing leaves the browser.',
+      ],
+    },
+    stack: ['JavaScript', 'Node.js', 'Vite', 'Web Workers', 'acorn', 'CodeMirror 6', 'React 19', 'htm', 'Canvas', 'Cloudflare Workers'],
+    links: [{ label: { pt: 'Jogar', en: 'Play' }, href: 'https://cybercafe.app.br/', kind: 'site' }],
+  },
+  {
     id: 'innovation',
     repo: 'mathgoms02/innovation-management-platform',
-    index: '002',
+    index: '003',
     name: 'Innovation Management Platform',
     year: '2026',
     status: 'active',
@@ -106,7 +157,7 @@ export const projects: Project[] = [
   {
     id: 'impact',
     repo: 'mathgoms02/impact-orchestrator',
-    index: '003',
+    index: '004',
     name: 'Impact Orchestrator',
     year: '2026',
     status: 'shipped',
@@ -155,7 +206,7 @@ export const projects: Project[] = [
   {
     id: 'smartgym',
     repo: 'mathgoms02/gestao-de-treinos-api',
-    index: '004',
+    index: '005',
     name: 'Smart Gym',
     year: '2026',
     status: 'active',
@@ -190,7 +241,7 @@ export const projects: Project[] = [
   {
     id: 'empregaai',
     repo: 'mathgoms02/EmpregaAI',
-    index: '005',
+    index: '006',
     name: 'EmpregaAI',
     year: '2025',
     status: 'shipped',
@@ -223,7 +274,7 @@ export const projects: Project[] = [
   },
   {
     id: 'shekinah',
-    index: '006',
+    index: '007',
     name: 'Shekinah Manager',
     year: '2026',
     status: 'active',
@@ -264,7 +315,7 @@ export const projects: Project[] = [
   },
   {
     id: 'clinica',
-    index: '007',
+    index: '008',
     name: 'Clinic Manager',
     year: '2026',
     status: 'active',
