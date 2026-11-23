@@ -116,20 +116,36 @@ export const metrics: Metric[] = [
   },
 ];
 
-export const education = {
-  degree: {
-    pt: "Engenharia da Computação — Bacharelado",
-    en: "Computer Engineering — Bachelor's",
-  } as L,
-  school: "UNASP",
-  schoolFull: {
-    pt: "Centro Universitário Adventista de São Paulo",
-    en: "Adventist University Center of São Paulo",
-  } as L,
-  start: "2021-07",
-  end: "2026-07",
-  status: { pt: "Concluído", en: "Completed" } as L,
-};
+export const education = [
+  {
+    degree: {
+      pt: "Arquitetura de Software, Ciência de Dados e Cybersecurity — Especialização",
+      en: "Software Architecture, Data Science, and Cybersecurity — Specialization",
+    } as L,
+    school: "PUC",
+    schoolFull: {
+      pt: "PUC-Campinas - Pontifícia Universidade Católica de Campinas",
+      en: "PUC-Campinas - Pontifical Catholic University of Campinas",
+    } as L,
+    start: "2026-11",
+    end: "2027-11",
+    status: { pt: "Em Andamento", en: "In Progress" } as L,
+  },
+  {
+    degree: {
+      pt: "Engenharia da Computação — Bacharelado",
+      en: "Computer Engineering — Bachelor's",
+    } as L,
+    school: "UNASP",
+    schoolFull: {
+      pt: "Centro Universitário Adventista de São Paulo",
+      en: "Adventist University Center of São Paulo",
+    } as L,
+    start: "2021-07",
+    end: "2026-07",
+    status: { pt: "Concluído", en: "Completed" } as L,
+  },
+];
 
 export const spokenLanguages = [
   {

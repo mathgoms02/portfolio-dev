@@ -140,6 +140,7 @@
   font-size: var(--step--1);
   color: var(--ink-3);
   letter-spacing: 0.04em;
+  margin-bottom: 20px;
 }
 
 .badge {
